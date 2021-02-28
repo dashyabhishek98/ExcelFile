@@ -1,0 +1,31 @@
+<div class="container">
+<p>read works!</p>
+<div>
+    <input type="file" (change)="onFileChange($event)" multiple="false" />
+    <input type="text" [(ngModel)]="searchWord"/> 
+    <button (click)="searchText(searchWord)">Search</button>
+    
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Product Name</th>
+              <th scope="col">Retail Price</th>
+              <th scope="col">Discounted Price</th>
+              <th scope="col">Description</th>
+              <th scope="col">Brand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of result">
+              <!-- <th scope="row"></th> -->
+              <td>{{r[0]}}</td>
+              <td>{{r[1]}}</td>
+              <td>{{r[2]}}</td>
+              <td>{{r[3]}}</td>
+              <td>{{r[4]}}</td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+</div>
+ 
